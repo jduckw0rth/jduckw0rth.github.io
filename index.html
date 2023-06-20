@@ -1,1 +1,79 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    .col-md-12.jumbotron.text-center {
+      background: linear-gradient(30deg, #ff6cff, #ff00ff, #8000ff, #00ffff, #00ff00, #ffff00, #ff8000);
+      color: #ffffff;
+    }
+    .plot-container {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+
+<body>
+  <style>
+    body {
+      background-image: url('neon_bacteria_background.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  </style>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1 style="font-family: Helvetica; font-weight: bold;">Bellybutton Biodiversity</h1>
+        <p style="font-family: Helvetica; font-weight: bold;">What's growing on in there? Use the drop down to change the Test Subject ID and explore the dataset!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well" style="background-color: #ff6cff;">
+          <h5>Test Subject ID #:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary" style="border-color: #ff8000;">
+          <div class="panel-heading" style="background-color: #ff8000; border-color: #ff8000;">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div id="bar" class="plot-container"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="gauge" class="plot-container"></div>
+      </div>
+    </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div id="bubble" class="plot-container" style="margin-top: 20px;"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-1">
+        <div id="bubble" class="plot-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./static/js/app.js"></script>
+  <script src="./StarterCode/samples.js"></script>
+
+</body>
+
+</html>
